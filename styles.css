@@ -7,8 +7,11 @@
     font-family: Arial, sans-serif;
     background-image: url('background.svg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; /* Cover the whole screen */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Optional: keeps background fixed on scroll */
   }
+  
   
   header {
     display: flex;
@@ -66,11 +69,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 60px 40px;
-    background: linear-gradient(to top, #88cfff 10%, #c7f9f4 100%);
+    flex-wrap: wrap;
   }
   
   .hero-text {
     max-width: 50%;
+    flex: 1 1 300px; 
+    padding-left: 25%;
   }
   
   .hero h1 {
@@ -95,7 +100,17 @@
     cursor: pointer;
   }
   
-  .hero-img img {
-    width: 300px;
+  .hero-img {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding-right: 15%;
   }
   
+  .hero-img img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
